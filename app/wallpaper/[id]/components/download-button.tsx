@@ -31,6 +31,7 @@ export function DownlaodButton(props: DownlaodButtonProps) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    window.URL.revokeObjectURL(proxyUrl);
   };
 
   return (

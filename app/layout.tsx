@@ -13,11 +13,13 @@ export const metadata: Metadata = {
 	description: "Discover and download stunning wallpapers for your devices",
 };
 
+interface RootLayoutProps {
+	children: React.ReactNode;
+}
+
 export default function RootLayout({
 	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+}: Readonly<RootLayoutProps>) {
 	return (
 		<html lang="en" className={geist.className}>
 			<body className={`font-sans antialiased`}>
