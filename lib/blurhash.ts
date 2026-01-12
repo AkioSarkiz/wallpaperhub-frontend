@@ -14,34 +14,30 @@ import { decode } from "blurhash";
  * @param height - Height for decoding (default: 32px)
  * @returns Base64 data URL string
  */
-export function blurhashToBase64(
-	blurhash: string,
-	width = 32,
-	height = 32,
-): string {
-	const pixels = decode(blurhash, width, height);
+export function blurhashToBase64(blurhash: string, width = 32, height = 32): string {
+    const pixels = decode(blurhash, width, height);
 
-	const canvas = document.createElement("canvas");
-	canvas.width = width;
-	canvas.height = height;
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
 
-	const ctx = canvas.getContext("2d");
-	if (!ctx) throw new Error("Could not get canvas context");
+    const ctx = canvas.getContext("2d");
+    if (!ctx) throw new Error("Could not get canvas context");
 
-	const imageData = ctx.createImageData(width, height);
-	imageData.data.set(pixels);
-	ctx.putImageData(imageData, 0, 0);
+    const imageData = ctx.createImageData(width, height);
+    imageData.data.set(pixels);
+    ctx.putImageData(imageData, 0, 0);
 
-	return canvas.toDataURL();
+    return canvas.toDataURL();
 }
 
 /**
  * Type for image data with blurhash
  */
 export interface ImageWithBlurhash {
-	src: string;
-	blurhash: string;
-	alt: string;
-	width?: number;
-	height?: number;
+    src: string;
+    blurhash: string;
+    alt: string;
+    width?: number;
+    height?: number;
 }
