@@ -6,6 +6,7 @@ import NextTopLoader from "nextjs-toploader";
 import type React from "react";
 import { Header } from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
+import { UmamiTracker } from "@/components/umami-tracker";
 
 const geist = Geist({ subsets: ["latin"] });
 
@@ -39,6 +40,8 @@ export default function RootLayout(props: Readonly<RootLayoutProps>) {
                         </footer>
                     </div>
                 </ThemeProvider>
+
+                <UmamiTracker />
             </body>
         </html>
     );
