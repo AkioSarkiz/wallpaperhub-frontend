@@ -15,7 +15,7 @@ export function Header() {
                         <div className="flex h-10 w-10">
                             <Image
                                 src={iconPng}
-                                alt="Logo"
+                                alt="WallpaperHub Logo"
                                 width={40}
                                 height={40}
                             />
