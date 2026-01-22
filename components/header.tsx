@@ -1,6 +1,10 @@
+import iconPng from '@/app/icon.png';
+
 import { Menu, Search } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+
 
 export function Header() {
     return (
@@ -8,8 +12,13 @@ export function Header() {
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
                 <div className="flex items-center gap-8">
                     <Link href="/" className="flex items-center gap-2">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                            <span className="text-lg font-bold text-primary-foreground">W</span>
+                        <div className="flex h-10 w-10">
+                            <Image
+                                src={iconPng}
+                                alt="WallpaperHub Logo"
+                                width={40}
+                                height={40}
+                            />
                         </div>
                         <span className="text-xl font-semibold text-foreground">WallpaperHub</span>
                     </Link>
