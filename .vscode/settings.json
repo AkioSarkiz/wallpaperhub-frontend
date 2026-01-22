@@ -1,0 +1,12 @@
+{
+    "editor.defaultFormatter": "biomejs.biome",
+    "prettier.enable": false,
+    "eslint.enable": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports.biome": "explicit"
+    },
+    // Disable VS Code's built-in validation for JS/TS if Biome handles it.
+    "javascript.validate.enable": false,
+    "typescript.validate.enable": false
+}
